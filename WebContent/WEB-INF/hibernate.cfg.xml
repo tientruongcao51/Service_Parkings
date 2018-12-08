@@ -5,9 +5,9 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<mapping class="com.parking.hibernate.entity.Customer" />
 		<mapping class="com.parking.hibernate.entity.CarCard" />
 		<mapping class="com.parking.hibernate.entity.CardCustomer" />
 		<mapping class="com.parking.hibernate.entity.Photo" />
+		<mapping class="com.parking.hibernate.entity.Customer" />
 	</session-factory>
 </hibernate-configuration>

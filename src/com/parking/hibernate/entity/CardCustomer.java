@@ -24,11 +24,11 @@ public class CardCustomer implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idCard")
 	private CarCard card;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idCustomer")
 	private Customer customer;
 
@@ -38,7 +38,7 @@ public class CardCustomer implements java.io.Serializable {
 	@Column(name = "timeReturn")
 	private Date timeReturn;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cardCustomer")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cardCustomer")
 	private Set<Photo> listPhoto = new HashSet<Photo>();
 
 	public Integer getId() {

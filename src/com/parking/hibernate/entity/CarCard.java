@@ -27,8 +27,12 @@ public class CarCard implements Serializable {
 	private String code;
 	@Column(name = "dateCreate")
 	private Date dateCreate;
+	@Column(name = "status")
+	private String status;
+	@Column(name = "type")
+	private String type; // 1 - gia dinh // 2 - khach hang ngoai
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "card")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "card")
 	private Set<CardCustomer> listCardCustomer = new HashSet<CardCustomer>();
 
 	public int getId() {
@@ -61,6 +65,14 @@ public class CarCard implements Serializable {
 
 	public void setListCardCustomer(Set<CardCustomer> listCardCustomer) {
 		this.listCardCustomer = listCardCustomer;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

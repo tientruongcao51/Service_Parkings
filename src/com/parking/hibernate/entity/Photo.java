@@ -38,7 +38,7 @@ public class Photo implements Serializable {
 	@Column(name = "updatetime")
 	private Date updateTime;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idcCardCustomer")
 	private CardCustomer cardCustomer;
 
